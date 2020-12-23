@@ -1,0 +1,52 @@
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+     
+      
+  
+      <!-- Icon -->
+      <div class="fadeIn first">
+        <img src="http://danielzawadzki.com/codepen/01/icon.svg" id="icon" alt="" />
+      </div>
+  
+<form [formGroup]="EditForm"  (ngSubmit)="OnEdit()">
+    <div>
+        <input type="text"  class="fadeIn second" id="nom" name="nom" placeholder="Société"formControlName="nom">
+        <div *ngIf="submitted && f.nom.errors">
+            <div *ngIf="f.nom.errors.required">
+            </div>
+        </div>
+    </div>
+    <div>
+        <input type="text"  class="fadeIn third" id="mf" name="mf" placeholder="Matricul Fiscal" formControlName="mf">
+        <div *ngIf="submitted && f.mf.errors">
+            <div *ngIf="f.mf.errors.required">
+            </div>
+        </div>
+        <div *ngIf="f.mf.errors.minlength">
+            <span class="text-danger">
+                 Label must be at least 8 characters
+            </span>
+        </div>
+    </div>
+    <div>
+        <input type="text"  class="fadeIn second"  id="adr" name="adr" placeholder="Adresse" formControlName="adr">
+        <div *ngIf="submitted && f.adr.errors">
+            <div *ngIf="f.adr.errors.required">
+            </div>
+        </div>
+    </div>
+    <div>
+        <input type="text"  class="fadeIn third" id="mail" name="mail" placeholder="Mail" formControlName="mail">
+        <div *ngIf="submitted && f.mail.errors">
+            <div *ngIf="f.mail.errors.required">
+            </div>
+        </div>
+    </div>
+        <input type="submit" class="fadeIn fourth" value="Submit">
+      
+    
+    
+    
+</form> 
+</div>
+  </div>

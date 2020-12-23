@@ -1,0 +1,41 @@
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+      
+      <h2 class="active"> Liste Fournisseur </h2>
+
+      <button class="fadeIn fourth" routerLink="/fournisseur/new">
+        Add Product
+     </button>
+      
+      <div class="fadeIn first">
+        <img src="http://danielzawadzki.com/codepen/01/icon.svg" id="icon" alt=""/>
+      </div>
+      
+        <table>
+            <tr>
+              <th>Sociéte</th>
+              <th>Matricul Fiscal</th>
+              <th>Adresse</th>
+              <th>Mail</th>
+              <th>Button</th>
+            </tr>
+            <tr *ngFor="let fournisseur of fournisseur;">
+              <td>{{fournisseur.nom}}}</td>
+              <td>{{fournisseur.mf}}}</td>
+              <td>{{fournisseur.adr}}}</td>
+              <td>{{fournisseur.mail}}}</td>
+              <td>
+               
+                <i role="button" class="fadeIn fourth" aria-hidden="true" (click)="editFournisseur(fournisseur)"></i>&nbsp;
+                <i role="button" class="fadeIn fourth" aria-hidden="true"(click)="removeFournisseur(fournisseur)"></i>
+            </td>
+
+            </tr>
+          </table>
+
+
+
+
+
+    </div>
+  </div>
